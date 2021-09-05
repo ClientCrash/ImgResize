@@ -1,7 +1,11 @@
 from PIL import Image
 import os
-basewidth = int(input("w>"))
-path=input("p>")
+import sys
+args = sys.argv
+basewidth = args[1]
+baseheigth = args[2]
+path=args[3]
+print("Resizing all png images in " + path + "to [" +basewidth + "x"+baseheigth+ "] .")
 files=[]
 #m = input("Mode (r/s) > ")
 for r, d, f in os.walk(path):
@@ -15,6 +19,6 @@ for r, d, f in os.walk(path):
 for f in files:
     print(f)
     img = Image.open(f)
-    img=img.resize((basewidth,basewidth),Image.ANTIALIAS)
+    img=img.resize((basewidth,baseheigth),Image.ANTIALIAS)
     img.save(f)
     print("saved : " + f)
