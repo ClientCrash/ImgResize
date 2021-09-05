@@ -15,6 +15,6 @@ for r, d, f in os.walk(path):
 for f in files:
     print(f)
     img = Image.open(f)
-    img=img.resize((8,8),Image.ANTIALIAS)
+    img=img.resize((basewidth,basewidth),Image.ANTIALIAS)
     img.save(f)
     print("saved : " + f)
