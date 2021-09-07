@@ -2,10 +2,10 @@ from PIL import Image
 import os
 import sys
 args = sys.argv
-basewidth = args[1]
-baseheigth = args[2]
+basewidth = int(args[1])
+baseheigth = int(args[2])
 path=args[3]
-print("Resizing all png images in " + path + "to [" +basewidth + "x"+baseheigth+ "] .")
+print("Resizing all png images in " + path + " to [" +str(basewidth) + "x"+str(baseheigth)+ "] .")
 files=[]
 #m = input("Mode (r/s) > ")
 for r, d, f in os.walk(path):
